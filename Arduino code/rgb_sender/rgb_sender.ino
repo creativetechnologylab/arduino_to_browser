@@ -4,7 +4,6 @@
 
 void setup() {
   Serial.begin( 9600 );
-
   pinMode( r, INPUT );
   pinMode( g, INPUT );
   pinMode( b, INPUT );

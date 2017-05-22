@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "cli-serial-selector": "^0.1.0"
+  }
+}
