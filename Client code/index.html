@@ -1,8 +1,15 @@
 <html>
 	<head>
-		<script src="p5.js"></script>
-		<script src="p5.serialport.js"></script>
-		<script src="sketch.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+		<script>
+			var socket = io.connect( 'http://127.0.0.1:4503' );
+			socket.on( 'connected', function() {
+				document.body.style.backgroundColor = 'black';
+			} );
+			socket.on( 'rgb', function ( values ) {
+				document.body.style.backgroundColor = 'rgb( ' + values.r + ', ' + values.g + ', ' + values.b + ' )';
+			} );
+		</script>
 	</head>
 	<body>
 	</body>
