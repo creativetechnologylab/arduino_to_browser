@@ -16,16 +16,14 @@ function portSelected( p ) {
 }
 
 function dataReceieved( data ) {
-	var values = {};
-
+	
 	data = data.toString().trim().split( ',' );
-
-	for ( var i = 0; i < data.length; i++ ) {
-		var value = parseInt( data[i] );
-		if ( i === 0 ) values.r = value;
-		if ( i === 1 ) values.g = value;
-		if ( i === 2 ) values.b = value;
-	}
+	
+	var values = {};
+	values.r = data[0];
+	values.g = data[1];
+	values.b = data[2];
+	
 	io.emit( 'rgb', values );
 	console.log( values );
 }
